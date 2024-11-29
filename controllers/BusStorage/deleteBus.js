@@ -1,4 +1,4 @@
-const BusStorageModal = require("../../model/busStorage"); 
+const BusStorageModal = require("../../model/bus"); 
 const deleteBus = async (req, res) => {
     try {
         const busId = req.params.id; 

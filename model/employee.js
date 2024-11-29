@@ -74,5 +74,5 @@ const EmpStoregeSchema = new Schema({
     },
 });
 
-const EmpStoregeModal = mongoose.model("EmpStorege", EmpStoregeSchema, "EmpStorege");
+const EmpStoregeModal = mongoose.model("Employee", EmpStoregeSchema, "Employee");
 module.exports = EmpStoregeModal;

@@ -16,5 +16,5 @@ const RouteStoreSchema = new Schema({
     },
 });
 
-const RouteStore = mongoose.model("RouterStore", RouteStoreSchema, "RouterStore");
+const RouteStore = mongoose.model("BusRoute", RouteStoreSchema, "BusRoute");
 module.exports = RouteStore;

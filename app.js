@@ -1,37 +1,16 @@
-// const express = require("express");
-// const basiRouter = require("./routers/basic");
-// const app = express();
-// const connectDb = require('./model/index');
-// const bodyParser = require('body-parser');
-// const port = 5000;
-
-// app.use(express.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
-// connectDb();
-// app.use("/bus-seva", basiRouter);
-
-// app.listen(port, () => {
-//     console.log(`server is running on ${port}`);
-// })
-
-// module.exports = app;
-
+const port = 5000;
 const express = require("express");
-const cors = require("cors"); // Import cors middleware
-const basiRouter = require("./routers/basic");
+const app = express();
+const cors = require("cors"); 
 const connectDb = require('./model/index');
 const bodyParser = require('body-parser');
-const app = express();
-const port = 5000;
+const basiRouter = require("./routers/route");
 
-// Connect to the database
 connectDb();
-
-// Enable CORS
 app.use(cors({
-    origin: "*", // Allow all origins (you can restrict to specific domains if needed)
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+    origin: "*", 
+    methods: ["GET", "POST", "PUT", "DELETE"], 
+    allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
 // Middleware

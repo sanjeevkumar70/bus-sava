@@ -1,4 +1,4 @@
-const BusStorageModal = require('../../model/busStorage');
+const BusStorageModal = require('../../model/bus');
 
 const addBus = async (req, res) => {
     const { bus_name,bus_number } = req.body;

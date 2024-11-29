@@ -1,4 +1,4 @@
-const BusStorageModal = require("../../model/busStorage");
+const BusStorageModal = require("../../model/bus");
 
 const busList = async (req, res) => {
     try {

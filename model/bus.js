@@ -12,5 +12,5 @@ const BusStorageSchema = new Schema({
     }
 });
 
-const BusStorageModal = mongoose.model("BusStorege", BusStorageSchema, "BusStorege");  
+const BusStorageModal = mongoose.model("Bus", BusStorageSchema, "Bus");  
 module.exports = BusStorageModal;

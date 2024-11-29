@@ -1,4 +1,4 @@
-const EmployeeModel = require("../../model/empStorage"); 
+const EmployeeModel = require("../../model/employee"); 
 const deleteEmployee = async (req, res) => {
     try {
         const busId = req.params.id; 

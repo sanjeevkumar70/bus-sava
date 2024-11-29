@@ -1,4 +1,4 @@
-const MemberModal = require("../../model/memberStore"); 
+const MemberModal = require("../../model/member"); 
 const deleteMember = async (req, res) => {
     try {
         const busId = req.params.id; 

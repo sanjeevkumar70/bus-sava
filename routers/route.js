@@ -1,14 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const ratesController = require("../controllers/Rates/rateController");
-const buscontroller = require("../controllers/BusStorage/buscontrollers");
+const buscontroller = require("../controllers/BusStorage/busControllers");
 const purposeController = require("../controllers/Purpose/purposeController");
-const busStopListController = require("../controllers/busStop/busStopController");
+const busStopListController = require("../controllers/BusStop/busStopController");
 const attendanceController = require("../controllers/Attendence/attendanceController");
-const empStorageController = require("../controllers/EmpStorege/empStorageController");
-const routeStoreController = require("../controllers/RouteStore/routesStoreController");
-const memberStoreController = require("../controllers/MemberStore/memberStoreController");
+const empStorageController = require("../controllers/Employee/empStorageController");
+const routeStoreController = require("../controllers/BusRoute/routesStoreController");
+const memberStoreController = require("../controllers/Member/memberStoreController");
 const departmentListController = require("../controllers/Department/departmentController");
+const authController = require("../controllers/Authentication/authController");
 
 //attendance api's
 router.post('/attendance', attendanceController.addAttendance.addAttendance);
@@ -65,6 +66,12 @@ router.post('/route', routeStoreController.addRoute.addRoute);
 router.put('/route/:id', routeStoreController.editRoute.editRoute);
 router.get('/route', routeStoreController.routeStoreList.routeStoreList);
 router.delete('/route/:id', routeStoreController.deleteRoute.deleteRoute);
+
+
+router.post('/login', authController.login.login);
+router.post('/sign-up', authController.signUp.signUp);
+
+
 
 
 module.exports = router;

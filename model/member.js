@@ -71,5 +71,5 @@ const MemberStoreSchema = new Schema({
     },
 });
 
-const MemberStoreModal = mongoose.model("MembarStore", MemberStoreSchema, "MembarStore");
+const MemberStoreModal = mongoose.model("Member", MemberStoreSchema, "Member");
 module.exports = MemberStoreModal;

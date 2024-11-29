@@ -1,4 +1,4 @@
-const AttendenceModal = require("../../model/busStorage");
+const AttendenceModal = require("../../model/attendance");
 
 const editAttendance = async (req, res) => {
     try {

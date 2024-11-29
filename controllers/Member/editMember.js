@@ -1,4 +1,4 @@
-const MemberModal = require("../../model/memberStore");
+const MemberModal = require("../../model/member");
 
 const editMember = async (req, res) => {
     try {

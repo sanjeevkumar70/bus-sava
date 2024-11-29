@@ -1,23 +1,27 @@
-const BusStopModal = require('../../model/bus-stops');
+const UserModal = require('../../model/user');
+const bcrypt = require('bcryptjs');
 
 const signUp = async (req, res) => {
-    const { busstop_name } = req.body;
-    if (!busstop_name) {
-        return res.status(400).json({ error: "Bus stop Name are required" });
+    const { name, email, mobile, password } = req.body;
+    if (!name || !email || !mobile || !password) {
+        return res.status(400).json({ error: `${name || email || mobile || password}  are required` });
     }
-    const existingData=await BusStopModal.findOne({busstop_name})
-    if(existingData){
-        return res.status(400).json({ error: "Bus stop already exists" });
+    const existingData = await UserModal.findOne({ email })
+    if (existingData) {
+        return res.status(400).json({ error: "User already exists" });
     }
-
-    const busData = new BusStopModal({
-        busstop_name: busstop_name,
+    const salt = await bcrypt.genSalt(10); 
+    const hashedPassword = await bcrypt.hash(password, salt);
+    const newUser = new UserModal({
+        name: name,
+        email: email,
+        mobile: mobile,
+        password: hashedPassword,
     });
 
-    await busData.save();
+    await newUser.save();
     res.status(201).json({
-        message: "Bus stop added successfully",
-        bus: busData,
+        message: "User created successfully",
     });
 };
 module.exports = { signUp }

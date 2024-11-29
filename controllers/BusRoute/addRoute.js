@@ -1,4 +1,4 @@
-const RouteModal = require('../../model/routeStore');
+const RouteModal = require('../../model/bus-route');
 
 const addRoute = async (req, res) => {
     try {
